@@ -1,0 +1,16 @@
+#!/bin/bash
+cd /usr/libexec
+./substrate
+find /Library/LaunchDaemons/ -name '*.plist' ! -name "dropbear.plist" -exec launchctl unload {} \;
+find /Library/LaunchDaemons/ -name '*.plist' ! -name "dropbear.plist" -exec launchctl load {} \;
+launchctl unload /System/Library/LaunchDaemons/com.apple.itunesstored.plist
+launchctl load -w /System/Library/LaunchDaemons/com.apple.itunesstored.plist
+launchctl kickstart -k system/com.apple.itunesstored
+launchctl unload /System/Library/LaunchDaemons/com.apple.appstored.plist
+launchctl load -w /System/Library/LaunchDaemons/com.apple.appstored.plist
+launchctl kickstart -k system/com.apple.appstored
+cd /var/lib/dpkg/info
+./net.angelxwind.appsyncunified.postinst
+killall imagent
+sand
+launchctl stop com.apple.SpringBoard

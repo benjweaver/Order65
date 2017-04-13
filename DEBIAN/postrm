@@ -1,0 +1,4 @@
+#!/bin/bash
+echo undoing fix. Ignore the errors.
+mv /Library/LaunchDaemons/ssh.plist /Library/LaunchDaemons/dropbear.plist
+exit 0
