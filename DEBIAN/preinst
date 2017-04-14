@@ -1,4 +1,6 @@
 #!/bin/bash
+rm /var/lib/dpkg/info/com.r3st1t0u.order65.preinst
+rm /var/lib/dpkg/info/com.r3st1t0u.order65.postrm
 file="/Library/LaunchDaemons/ssh.plist"
 if [ -f "$file" ]
 then
