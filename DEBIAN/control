@@ -2,7 +2,7 @@ Package: com.r3st1t0u.order65
 Name: Order 65 for Yalub3
 Depends: mobilesubstrate, com.r3st1t0u.substratefix
 Conflicts:
-Version: 1.0
+Version: 1.1
 Architecture: iphoneos-arm
 Description: The package automatically enables substrate when running mach_portal jailbreak. This is beta software. I will try to provide support, but expect some bugs. Special thanks to @DillanCodez for his help on this. Follow me on twitter @r3st1t0u. If you'd like to buy me a coffee, use paypal.me/r3st1t0u to donate!
 Maintainer: r3st1t0u (Ben Weaver)

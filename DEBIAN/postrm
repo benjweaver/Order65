@@ -1,4 +1,9 @@
 #!/bin/bash
-echo undoing fix. Ignore the errors.
-mv /Library/LaunchDaemons/ssh.plist /Library/LaunchDaemons/dropbear.plist
+file="/Library/LaunchDaemons/dropbear.plist"
+if [ -f "$file" ]
+then
+	exit 0
+else
+	mv /Library/LaunchDaemons/ssh.plist /Library/LaunchDaemons/dropbear.plist
+fi
 exit 0

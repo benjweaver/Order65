@@ -1,8 +1,6 @@
 #!/bin/bash
-cd /usr/libexec
-./substrate
-find /Library/LaunchDaemons/ -name '*.plist' ! -name "dropbear.plist" -exec launchctl unload {} \;
-find /Library/LaunchDaemons/ -name '*.plist' ! -name "dropbear.plist" -exec launchctl load {} \;
+ls /etc/rc.d | while read a; do /etc/rc.d/"$a"; done
+launchctl load /Library/LaunchDaemons
 launchctl unload /System/Library/LaunchDaemons/com.apple.itunesstored.plist
 launchctl load -w /System/Library/LaunchDaemons/com.apple.itunesstored.plist
 launchctl kickstart -k system/com.apple.itunesstored

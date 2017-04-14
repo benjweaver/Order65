@@ -1,4 +1,9 @@
 #!/bin/bash
-echo Backing up dropbear. Ignore the errors.
-mv /Library/LaunchDaemons/dropbear.plist /Library/LaunchDaemons/ssh.plist
+file="/Library/LaunchDaemons/ssh.plist"
+if [ -f "$file" ]
+then
+	exit 0
+else
+	mv /Library/LaunchDaemons/dropbear.plist /Library/LaunchDaemons/ssh.plist
+fi
 exit 0

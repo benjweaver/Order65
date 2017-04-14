@@ -1,4 +1,5 @@
 #!/bin/bash
+launchctl load /Library/LaunchDaemons/ssh.plist
 if [[ $UID -ne 0 ]]; then
 	echo You must be root!
 	exit 1
