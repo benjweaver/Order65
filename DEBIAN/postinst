@@ -1,0 +1,8 @@
+#!/bin/bash
+file="/Library/LaunchDaemons/0.reload.plist"
+if [ -f "$file" ]
+then
+	rm /Library/LaunchDaemons/0.reload.plist && rm /usr/libexec/reload
+else
+	exit 0
+fi
